@@ -1,0 +1,13 @@
+Enable 32-bit architecture support: sudo dpkg --add-architecture i386
+
+Graphical Install
+Double click on the .deb package to install using the graphical package manager.
+
+Terminal Install
+wget https://www.scootersoftware.com/bcompare-4.2.8.23479_amd64.deb
+sudo apt-get update
+sudo apt-get install gdebi-core
+sudo gdebi bcompare-4.2.8.23479_amd64.deb
+
+Terminal Uninstall
+sudo apt-get remove bcompare
