@@ -1,0 +1,19 @@
+Remove full path from terminal
+
+The man page (see "Bash" and there "PROMPTING") says:
+
+      \w     the  current working directory, with $HOME
+             abbreviated with a tilde (uses the value of the
+             PROMPT_DIRTRIM variable)
+      \W     the basename of the current working directory,
+             with $HOME abbreviated with a tilde
+So you have to change \w to \W. Probably the initial value for $PS1 is stored in your .bashrc(sudo gedit .bashrc), that means you have to edit the file ~/.bashrc and you will find lines similar to:
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+Change \w to \W in both lines and open a new terminal (or run source ~/.bashrc).
