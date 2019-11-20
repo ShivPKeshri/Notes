@@ -1,0 +1,10 @@
+ Python 3.6 is trying to overwrite Python 3.8 installation
+
+You would have to run an apt dist-upgrade for it to be able to automatically remove packages, although this might fail with the current state you are in, and also I do not know if their packaging would actually remove the problematic packages.
+
+Therefore this would remove all those packages you found in the changelog as having been dropped while ignoring dependencies:
+CODE: 
+
+sudo dpkg --purge --force-remove-reinstreq --force-depends python3.8-distutils python3.8-tk python3.8-gdbm python3.8-lib2to3
+
+After that you should be able to ugprade normally.
