@@ -1,0 +1,20 @@
+Step 1 -- Open terminal
+First of all, open up the terminal application and type in the following command:
+"sudo visudo"
+
+Step 2 -- Enter password
+With that done, you will be prompted for the password. Enter the password where specified.
+
+Step 3 -- Open sudoers.tmp in editor
+Once you type in the password and hit the enter key, the sudoers.tmp file opens up in an editor. Over there, search the members of the admin group and members of group sudo section in the document. 
+
+Step 4 -- Enter NOPASSWD command
+Over here, you can simply edit the lines and enter "NOPASSWD" in both of them. These should be entered exactly as stated, in Caps lock, otherwise the command won't work. This command will remove password from ubuntu.
+
+Step 5 -- Exit and save changes
+Now Exit the editor by pressing "Ctrl+X", and when prompted, hit Y to save the changes made. Save changes in order to remove password from ubuntu.
+
+Step 6 -- No password required for any sudo activity
+With that done, you will be asked to type in the name for the file that was just saved. No need to change the file name here, simply hit enter to exit from the window.
+Now execute any sudo activity and you will notice that the sudo gets executed without prompting you for any password.
+
